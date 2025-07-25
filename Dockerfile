@@ -26,4 +26,5 @@ COPY data/ ./data/
 EXPOSE 8000
 
 # Command to run the FastAPI app
-CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT ["bash", "-c"]
+CMD ["echo 'Starting DJS CodeAI Backend...'; printenv GOOGLE_API_KEY; sleep 5; exec python -m uvicorn main:app --host 0.0.0.0 --port 8000"]
