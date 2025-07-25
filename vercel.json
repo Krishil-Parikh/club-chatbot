@@ -11,13 +11,5 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ],
-  "env": {
-    "GOOGLE_API_KEY": "@google_api_key",
-    "QDRANT_URL": "@qdrant_url",
-    "QDRANT_API_KEY": "@qdrant_api_key",
-    "QDRANT_COLLECTION_NAME": "djs_codeai_knowledge",
-    "QDRANT_CHAT_HISTORY": "djs_codeai_conversations",  
-    "PDF_DIR": "/app/data"
-  }
+  ]
 }
