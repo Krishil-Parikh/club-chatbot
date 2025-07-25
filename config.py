@@ -16,7 +16,7 @@ class Config:
     QDRANT_API_KEY: str = os.getenv("QDRANT_API_KEY", "") # Optional, for cloud Qdrant
     QDRANT_COLLECTION_NAME: str = os.getenv("QDRANT_COLLECTION_NAME", "djs_codeai_knowledge")
     QDRANT_CHAT_HISTORY_COLLECTION: str = os.getenv("QDRANT_CHAT_HISTORY", "djs_codeai_conversations") # Consistent naming
-    PDF_DIR: str = os.getenv("PDF_DIR", "/app/data") # Corrected for Docker environment
+    PDF_DIR: str = os.getenv("PDF_DIR", "/tmp/data") # Corrected for Docker environment
 
     # Ensure essential configurations are present
     if not GOOGLE_API_KEY:
