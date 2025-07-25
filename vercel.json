@@ -2,7 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "Dockerfile"
+      "src": "Dockerfile",
+      "use": "@vercel/docker"
     }
   ],
   "routes": [
