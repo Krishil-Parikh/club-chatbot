@@ -1,4 +1,3 @@
-# config.py
 import os
 from dotenv import load_dotenv
 
@@ -12,13 +11,13 @@ class Config:
     and loaded via environment variables, not hardcoded.
     """
     GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY", "")
-    QDRANT_URL: str = os.getenv("QDRANT_URL", "http://localhost:6333") # Default to local if not set
-    QDRANT_API_KEY: str = os.getenv("QDRANT_API_KEY", "") # Optional, for cloud Qdrant
+    QDRANT_URL: str = os.getenv("QDRANT_URL", "http://localhost:6333")
+    QDRANT_API_KEY: str = os.getenv("QDRANT_API_KEY", "")
     QDRANT_COLLECTION_NAME: str = os.getenv("QDRANT_COLLECTION_NAME", "djs_codeai_knowledge")
-    QDRANT_CHAT_HISTORY_COLLECTION: str = os.getenv("QDRANT_CHAT_HISTORY", "djs_codeai_conversations") # Consistent naming
-    PDF_DIR: str = os.getenv("PDF_DIR", "/tmp/data") # Corrected for Docker environment
+    QDRANT_CHAT_HISTORY: str = os.getenv("QDRANT_CHAT_HISTORY", "djs_codeai_conversations")
+    PDF_DIR: str = os.getenv("PDF_DIR", "data")
 
-    # Ensure essential configurations are present
+    # Ensure essential configurations are present for production
     if not GOOGLE_API_KEY:
         raise ValueError("GOOGLE_API_KEY environment variable not set.")
     # For cloud Qdrant, QDRANT_URL and QDRANT_API_KEY are essential.
